@@ -1,0 +1,12 @@
+---
+pid: pid/jin-rou.pid
+log: log/jin-rou.log
+port: 7000
+#chdir: /home/jin-rou
+host: 0.0.0.0
+servers: 1
+#user: jin-rou
+#group: jin-rou
+rackup: start.ru
+server: thin
+environment: none
