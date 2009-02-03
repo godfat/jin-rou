@@ -2,6 +2,8 @@ tmp
 pkg
 doc
 ann-*
+log
+pid
 
 *.rbc
 *.log
