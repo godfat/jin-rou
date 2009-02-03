@@ -1,6 +1,11 @@
 
 require "#{File.expand_path(File.dirname(__FILE__))}/init"
 
+task :default do
+  Rake.application.options.show_task_pattern = /./
+  Rake.application.display_tasks_and_comments
+end
+
 begin
   require 'rubygems'
   require 'app-deploy'
@@ -46,6 +51,24 @@ AppDeploy.dependency_gem :github_user    => 'godfat',
 AppDeploy.dependency_gem :github_user    => 'godfat',
                          :github_project => 'pagify',
                          :task_gem       => 'bones'
+
+namespace :log do
+  def each_log
+    Dir.glob(File.dirname(__FILE__) + "/log/*.log").each{ |file|
+      yield(file)
+    }
+  end
+
+  desc 'truncate logs'
+  task :clear do
+    each_log{ |file| File.open(file, 'w').close }
+  end
+
+  desc 'gzip logs'
+  task :gzip do
+    each_log{ |file| sh "gzip #{file}" }
+  end
+end
 
 namespace :db do
   desc 'setup db, it\'s DESTRUCTIVE!!!'
