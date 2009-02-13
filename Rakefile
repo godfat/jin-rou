@@ -84,6 +84,16 @@ namespace :log do
   end
 end
 
+namespace :console do
+  desc 'model console for you'
+  task :model do
+    require 'model/init'
+    require 'irb'
+    ARGV.clear
+    IRB.start
+  end
+end
+
 namespace :app do
   namespace :server do
     [:start, :stop, :restart].each{ |cmd|
