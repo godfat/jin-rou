@@ -1,0 +1,11 @@
+
+<ul>
+  <?r @locales.each do |locale| ?>
+  <li>
+    #{locale[0]}
+    <blockquote>
+      #{A locale[1], :href => "/locale_setup/#{locale[2]}"}
+    </blockquote>
+  </li>
+  <?r end ?>
+</ul>
