@@ -2,8 +2,10 @@
 Role:
   Villager: Villager
   Astrologer: Astrologer
-  Werewolf: Werewolf
   Coroner: Coroner
   Guardian: Guardian
   Disciple: Disciple
+  Avenger: Avenger
+  Werewolf: Werewolf
+  Tobewolf: Tobewolf
   HuliJin: HuliJin

@@ -12,9 +12,6 @@ end
 class Astrologer < Role
 end
 
-class Werewolf < Role
-end
-
 class Coroner < Role
 end
 
@@ -22,6 +19,15 @@ class Guardian < Role
 end
 
 class Disciple < Role
+end
+
+class Avenger < Role
+end
+
+class Werewolf < Role
+end
+
+class Tobewolf < Role
 end
 
 class HuliJin < Role
