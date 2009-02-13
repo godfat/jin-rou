@@ -1,4 +1,10 @@
 
+# web text
+title: Are you a human, or werewolf?
+locale_menu_descrition: Please choose your locale
+locale_name: English
+
+# db data
 Role:
   - Villager: Villager
   - Astrologer: Astrologer

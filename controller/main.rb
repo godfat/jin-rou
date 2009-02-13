@@ -6,15 +6,30 @@
 # this will force the controller to be mounted on: /otherurl
 
 class MainController < Controller
-  # the index action is called automatically when no other action is specified
+  helper :aspect
+
+  before{
+    if session[:LOCALE].nil? && request.fullpath != '/locale'
+      redirect('/locale')
+    end
+  }
+
   def index
-    @title = "Welcome to Ramaze!"
+    '[[locale_name]]'
   end
 
-  # the string returned at the end of the function is used as the html body
-  # if there is no template for the action. if there is a template, the string
-  # is silently ignored
-  def notemplate
-    "there is no 'notemplate.xhtml' associated with this action"
+  def locale
+    @locales = Ramaze::Tool::Localize.languages.map{ |lang|
+      [
+        Ramaze::Tool::Localize.localize('locale_menu_descrition', lang),
+        Ramaze::Tool::Localize.localize('locale_name', lang),
+        lang
+      ]
+    }
+  end
+
+  def locale_setup name
+    session[:LOCALE] = name if Ramaze::Tool::Localize.languages.member?(name)
+    redirect '/'
   end
 end

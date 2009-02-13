@@ -1,4 +1,10 @@
 
+# web text
+title: 汝等是人是狼？
+locale_menu_descrition: 請選擇你的語系
+locale_name: 中文
+
+# db data
 Role:
   - Villager: 村民
   - Astrologer: 占星士
