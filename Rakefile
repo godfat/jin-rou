@@ -26,6 +26,9 @@ rescue LoadError
 
 end
 
+require 'task/db'
+require 'task/log'
+
 %w[ bones ramaze dm-core do_sqlite3
     dm-timestamps dm-aggregates dm-sweatshop ].each{ |name|
   AppDeploy.dependency_gem :gem => name
@@ -52,53 +55,32 @@ AppDeploy.dependency_gem :github_user    => 'godfat',
                          :github_project => 'pagify',
                          :task_gem       => 'bones'
 
-namespace :log do
-  def each_log
-    Dir.glob(File.dirname(__FILE__) + "/log/*.log").each{ |file|
-      yield(file)
-    }
+namespace :db do
+  desc 'setup db, it\'s DESTRUCTIVE!!!'
+  task :setup => [:auto_migrate, :import_fixture]
+
+  task :auto_migrate do
+    JinRou.db_auto_migrate
   end
 
+  task :import_fixture do
+    JinRou.db_import_fixture
+  end
+
+  task :import_role do
+    JinRou.db_import_role
+  end
+end
+
+namespace :log do
   desc 'truncate logs'
   task :clear do
-    each_log{ |file| File.open(file, 'w').close }
+    JinRou.log_clear
   end
 
   desc 'gzip logs'
   task :gzip do
-    each_log{ |file| sh "gzip #{file}" }
-  end
-end
-
-namespace :db do
-  desc 'setup db, it\'s DESTRUCTIVE!!!'
-  task :setup => [:auto_migrate, :import_fixtures]
-
-  task :auto_migrate do
-    puts 'this is DESTRUCTIVE!!!'
-    require 'model/init'
-    DataMapper.auto_migrate!
-  end
-
-  task :import_fixtures => [:import_role]
-
-  task :import_role do
-    require 'dm-sweatshop'
-    require 'model/init'
-    require 'yaml'
-
-    locale = JinRou.yaml_load('config/setting.yaml')['locale']
-
-    JinRou.yaml_load("locale/#{locale}.yaml")['Role'].each{ |role_name|
-      role, name = role_name
-      model = Object.const_get(role)
-
-      model.fixture do
-        {:name => name}
-      end
-
-      model.generate
-    }
+    JinRou.log_gzip
   end
 end
 
