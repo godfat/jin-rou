@@ -19,7 +19,7 @@ module JinRou
     locale = JinRou.yaml_load('config/setting.yaml')['locale']
 
     JinRou.yaml_load("locale/#{locale}.yaml")['Role'].each{ |role_name|
-      role, name = role_name
+      role, name = role_name.first
       model = Object.const_get(role)
 
       model.fixture do
