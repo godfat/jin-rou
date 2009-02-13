@@ -9,8 +9,15 @@ class MainController < Controller
   helper :aspect
 
   before{
-    if session[:LOCALE].nil? && request.fullpath != '/locale'
-      redirect('/locale')
+    if request.fullpath !~ %r{^/locale}
+      if session[:LOCALE].nil?
+        session[:referer] = request.fullpath
+        redirect('/locale')
+
+      else
+        session.delete(:referer)
+
+      end
     end
   }
 
@@ -30,6 +37,6 @@ class MainController < Controller
 
   def locale_setup name
     session[:LOCALE] = name if Ramaze::Tool::Localize.languages.member?(name)
-    redirect '/'
+    redirect(session[:referer] || '/')
   end
 end
