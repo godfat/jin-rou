@@ -5,6 +5,7 @@
 
 require 'rubygems'
 require 'dm-core'
+require 'dm-timestamps'
 
 DataMapper.setup(:default, JinRou.yaml_load('config/database.yaml')['uri'])
 
