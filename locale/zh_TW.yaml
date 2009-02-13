@@ -4,7 +4,55 @@ title: 汝等是人是狼？
 locale_menu_descrition: 請選擇你的語系
 locale_name: 中文
 
+bgcolor_night: midnightblue
+bgcolor_day: maroon
+
 # db data
+Character:
+  - name: 紅包
+    color: red
+    avatar: image/red.png
+
+  - name: 綠燈
+    color: green
+    avatar: image/green.png
+
+  - name: 欄杆
+    color: blue
+    avatar: image/blue.png
+
+  - name: 黃金
+    color: gold
+    avatar: image/gold.png
+
+  - name: 子彈
+    color: blueviolet
+    avatar: image/blueviolet.png
+
+  - name: 黑橘子
+    color: darkorange
+    avatar: image/darkorange.png
+
+  - name: 泡泡
+    color: aqua
+    avatar: image/aqua.png
+
+  - name: 泥土
+    color: darkkhaki
+    avatar: image/darkkhaki.png
+
+  - name: 雞蛋
+    color: chartreuse
+    avatar: image/chartreuse.png
+
+  - name: 磁鐵
+    color: magenta
+    avatar: image/magenta.png
+
+  - name: 海
+    color: royalblue
+    avatar: image/royalblue.png
+
 Role:
   - Villager: 村民
   - Astrologer: 占星士

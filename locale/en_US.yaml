@@ -4,7 +4,55 @@ title: Are you a human, or werewolf?
 locale_menu_descrition: Please choose your locale
 locale_name: English
 
+bgcolor_night: midnightblue
+bgcolor_day: maroon
+
 # db data
+Character:
+  - name: Red
+    color: red
+    avatar: image/red.png
+
+  - name: Green
+    color: green
+    avatar: image/green.png
+
+  - name: Blue
+    color: blue
+    avatar: image/blue.png
+
+  - name: Gold
+    color: gold
+    avatar: image/gold.png
+
+  - name: Blue Violet
+    color: blueviolet
+    avatar: image/blueviolet.png
+
+  - name: Dark Orange
+    color: darkorange
+    avatar: image/darkorange.png
+
+  - name: Aqua
+    color: aqua
+    avatar: image/aqua.png
+
+  - name: Dark Khaki
+    color: darkkhaki
+    avatar: image/darkkhaki.png
+
+  - name: Chartreuse
+    color: chartreuse
+    avatar: image/chartreuse.png
+
+  - name: Magenta
+    color: magenta
+    avatar: image/magenta.png
+
+  - name: Royal Blue
+    color: royalblue
+    avatar: image/royalblue.png
+
 Role:
   - Villager: Villager
   - Astrologer: Astrologer
