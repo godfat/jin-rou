@@ -12,6 +12,7 @@ class Player
 
   belongs_to :village
   belongs_to :role
+  belongs_to :character
 
   has n, :messages
   has n, :votes
