@@ -39,4 +39,9 @@ class MainController < Controller
     session[:LOCALE] = name if Ramaze::Tool::Localize.languages.member?(name)
     redirect(session[:referer] || '/')
   end
+
+  def characters
+    @characters = Character.all
+  end
+
 end
