@@ -2,7 +2,7 @@
 # controllers
 
 class Controller < Ramaze::Controller
-  layout '/page'
+  layout '/layout'
   helper :xhtml
   engine :Ezamar
 end
