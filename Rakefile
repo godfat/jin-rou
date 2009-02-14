@@ -29,7 +29,7 @@ end
 require 'task/db'
 require 'task/log'
 
-%w[ bones ramaze dm-core do_sqlite3 ya2yaml
+%w[ bones ramaze dm-core ya2yaml
     dm-timestamps dm-aggregates ].each{ |name|
   AppDeploy.dependency_gem :gem => name
 }

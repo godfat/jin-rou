@@ -1,5 +1,5 @@
 
-require 'dm-types/uri'
+# require 'dm-types/uri'
 
 class Character
   include DataMapper::Resource
@@ -7,5 +7,5 @@ class Character
 
   property :name, String
   property :color, String
-  property :avatar, URI
+  property :avatar, String # URI
 end
