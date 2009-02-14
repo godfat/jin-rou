@@ -1,1 +1,2 @@
+* don't load up app-deploy at first, use it lazily
 * finish model
