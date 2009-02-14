@@ -14,7 +14,7 @@ module JinRou
 
   def db_import_role
     each_locale_data('Role'){ |data|
-      role, name = data.first
+      role, name = data.to_a.flatten
       Object.const_get(role).create(:name => name)
     }
   end
