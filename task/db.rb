@@ -13,17 +13,9 @@ module JinRou
   end
 
   def db_import_role
-    require 'dm-sweatshop'
-
     each_locale_data('Role'){ |data|
       role, name = data.first
-      model = Object.const_get(role)
-
-      model.fixture do
-        {:name => name}
-      end
-
-      model.generate
+      Object.const_get(role).create(:name => name)
     }
   end
 
