@@ -11,7 +11,7 @@ DataMapper.setup(:default, JinRou.yaml_load('config/database.yaml')['uri'])
 
 Dir.glob(File.dirname(__FILE__) + "/*.rb").each{ |file|
   # snip base dir and file ext
-  file = file[ (file =~ %r{model/})..-1 ][0..-4]
+  file = file[ (file =~ %r{model/})..-4 ]
 
   next if file == 'model/init'
   require file
