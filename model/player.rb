@@ -1,12 +1,30 @@
 
 require 'digest/sha1'
 
+begin
+  # if there's no dm-types/enum, use String instead
+  require 'dm-types/enum'
+rescue LoadError
+end
+
 class Player
   include DataMapper::Resource
   property :id, Serial
   timestamps :at
 
-  property :name,     String
+  # game property
+  begin
+    property :status, Enum.new(:alive, :dead), :default => :alive
+
+  rescue NameError
+    property :status, String, :default => 'alive'
+    def status
+      @status.to_sym
+    end
+
+  end
+
+  # user property
   property :password, String, :size => 40
   property :salt,     String, :size => 12
 
