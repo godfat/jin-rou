@@ -1,6 +1,4 @@
 
-# require 'dm-types/uri'
-
 class Character
   include DataMapper::Resource
   property :id, Serial

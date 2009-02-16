@@ -36,7 +36,7 @@ class Player
 
   def password= input
     self.salt = rand.to_s.reverse[0, 12]
-    @password = password_caculate(input)
+    attribute_set(:password, password_caculate(input))
     input
   end
 
