@@ -36,6 +36,10 @@ class Player
   has n, :messages
   has n, :votes
 
+  def leave
+    game.kick(self)
+  end
+
   def say something
     Message.create(:player => self, :name => something)
   end
