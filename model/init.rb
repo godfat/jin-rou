@@ -21,6 +21,9 @@ Dir.glob(File.dirname(__FILE__) + "/*.rb").map{ |file|
 }.compact.each{ |model|
 
   model.properties.each{ |property|
+    # skip ParanoidDateTime
+    next if property.type == DataMapper::Types::ParanoidDateTime
+
     # property default no nil
     property.instance_variable_set('@nullable', false)
 
