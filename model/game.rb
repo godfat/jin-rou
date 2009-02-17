@@ -1,5 +1,5 @@
 
-class Village
+class Game
   include DataMapper::Resource
   property :id, Serial
   timestamps :at
@@ -7,7 +7,7 @@ class Village
   property :name, String
 
   has n, :players
-  has n, :days
+  has n, :turns
 
   def dispatch_player
     chars   = Character.all.shuffle

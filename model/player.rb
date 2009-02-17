@@ -28,7 +28,7 @@ class Player
   property :password, String, :size => 40
   property :salt,     String, :size => 12
 
-  belongs_to :village
+  belongs_to :game
   belongs_to :role
   belongs_to :character
 
@@ -39,8 +39,8 @@ class Player
     Message.create(:player => self, :name => something)
   end
 
-  def vote day, who
-    Vote.create(:day => day, :obj => self, :sbj => who)
+  def vote turn, who
+    Vote.create(:turn => turn, :obj => self, :sbj => who)
   end
 
   # for user who don't want to create a password itself
