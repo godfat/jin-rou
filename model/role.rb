@@ -6,29 +6,32 @@ class Role
   property :name, String
 end
 
-class Villager < Role
+# side with Rabbit
+class Rabbit < Role
 end
 
-class Astrologer < Role
+class Owl < Role
 end
 
-class Coroner < Role
+class Fly < Role
 end
 
-class Guardian < Role
+class Dog < Role
 end
 
-class Disciple < Role
+class Sparrow < Role
 end
 
-class Avenger < Role
+class Viper < Role
 end
 
-class Werewolf < Role
+# side with Wolf
+class Wolf < Role
 end
 
-class Tobewolf < Role
+class Bat < Role
 end
 
-class HuliJin < Role
+# side with Fox
+class Fox < Role
 end

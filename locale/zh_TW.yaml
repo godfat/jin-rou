@@ -54,12 +54,12 @@ Character:
     avatar: image/royalblue.png
 
 Role:
-  - Villager: 村民
-  - Astrologer: 占星士
-  - Coroner: 驗屍官
-  - Guardian: 守衛
-  - Disciple: 門徒
-  - Avenger: 復仇者
-  - Werewolf: 人狼
-  - Tobewolf: 半狼
-  - HuliJin: 狐狸精
+  - Rabbit: 兔子
+  - Owl: 貓頭鷹
+  - Fly: 蒼蠅
+  - Dog: 狗
+  - Sparrow: 麻雀
+  - Viper: 毒蛇
+  - Wolf: 狼
+  - Bat: 蝙蝠
+  - Fox: 狐狸
