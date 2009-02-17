@@ -1,2 +1,5 @@
+* people could have many votes for a day
+* add locale property for role/character etc.
 * don't load up app-deploy at first, use it lazily
 * finish model
+* model test
