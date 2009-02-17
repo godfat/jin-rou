@@ -7,6 +7,7 @@ class Game
 
   property :name, String
 
+  has 1, :wizard
   has n, :players
   has n, :turns
 

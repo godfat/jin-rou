@@ -10,6 +10,7 @@ end
 class Player
   include DataMapper::Resource
   property :id, Serial
+  property :type, Discriminator
   timestamps :at
 
   # game property
